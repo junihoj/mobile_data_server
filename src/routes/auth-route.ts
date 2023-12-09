@@ -11,7 +11,10 @@ export default class AuthRoute {
   }
 
   init() {
-    this.authRouter.get("/this", this.authController.login);
+    this.authRouter.post("/register", (req, res) =>
+      this.authController.register(req, res)
+    );
+    this.authRouter.post("");
     return this.authRouter;
   }
 }

@@ -11,7 +11,7 @@ async function Init() {
   db();
   const httpServer = http.createServer(app);
   const port = process.env.PORT ?? 5000;
-
+  app.use(express.json());
   routerProvider.routesFunc(app);
 
   httpServer.listen(port, () => {

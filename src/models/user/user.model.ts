@@ -1,5 +1,5 @@
 import { prop, getModelForClass } from "@typegoose/typegoose";
-import { validateUserEmail } from "./user.validation";
+import { validateUserEmail, validateUserPassword } from "./user.validation";
 import { Service } from "typedi";
 import verifyPassword from "./methods/verify-password";
 
@@ -15,13 +15,17 @@ export class User {
   })
   email: string;
 
-  @prop({
-    validate: validateUserEmail,
-  })
+  @prop()
   password: string;
 
   @prop()
   salt: string;
+
+  @prop()
+  phoneNumber: string;
+
+  @prop()
+  whatsappNumber: string;
 
   public static async verifyPassword(
     password: string,
