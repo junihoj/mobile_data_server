@@ -8,7 +8,7 @@ export default class AuthController {
   async login(req: Request, res: Response) {
     try {
       const input = req.body;
-      const data = this.authService.loginUser(input, req, res);
+      return this.authService.loginUser(input, req, res);
     } catch (err) {
       console.log("ERROR OCCURED", err);
     }

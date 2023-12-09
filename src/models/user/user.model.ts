@@ -1,9 +1,11 @@
 import { prop, getModelForClass } from "@typegoose/typegoose";
-import { validateUserEmail, validateUserPassword } from "./user.validation";
+import { validateUserEmail } from "./user.validation";
 import { Service } from "typedi";
 import verifyPassword from "./methods/verify-password";
 
 export class User {
+  _id: string;
+
   @prop()
   username: string;
 
